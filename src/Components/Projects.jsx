@@ -136,7 +136,7 @@ export default function Projects() {
     <section
       id="projects"
       className={`py-20 transition-colors duration-300 ${
-        theme === "dark" ? "bg-gray-800" : "bg-gray-50"
+        theme === "dark" ? "bg-[#1F2937]" : "bg-gray-50"
       }`}
       ref={sectionRef}
     >
@@ -170,8 +170,8 @@ export default function Projects() {
                   : "opacity-0 translate-y-10"
               } ${
                 theme === "dark"
-                  ? "bg-gray-700 hover:shadow-2xl hover:shadow-blue-500/20"
-                  : "bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-500/20"
+                  ? "bg-[#1F2937] hover:bg-[#273345] hover:shadow-2xl hover:shadow-[#1F2937]/40"
+                  : "bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-500/15"
               } hover:-translate-y-3 cursor-pointer`}
             >
               <div className="relative h-56 overflow-hidden">
@@ -181,8 +181,13 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* Blue overlay */}
-                <div className="absolute inset-0 bg-blue-500 opacity-30 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <div
+                  className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${
+                    theme === "dark"
+                      ? "bg-[#1F2937] opacity-30"
+                      : "bg-[#CBD5E1] opacity-40"
+                  }`}
+                ></div>
 
                 <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   {project.liveUrl && (
@@ -191,18 +196,23 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={t("projects.liveDemo", language)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                      className={`w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg ${
+                        theme === "dark" ? "bg-[#273345]" : "bg-white"
+                      }`}
                     >
                       <ExternalLink className="text-blue-600" size={20} />
                     </a>
                   )}
+
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       title={t("projects.viewCode", language)}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                      className={`w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg ${
+                        theme === "dark" ? "bg-[#273345]" : "bg-white"
+                      }`}
                     >
                       <Github className="text-blue-600" size={20} />
                     </a>
@@ -218,6 +228,7 @@ export default function Projects() {
                 >
                   {t(`projects.items.${index}.title`, language)}
                 </h3>
+
                 <p
                   className={`mb-4 leading-relaxed line-clamp-2 ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
@@ -228,7 +239,7 @@ export default function Projects() {
 
                 <div
                   className={`h-px mb-4 ${
-                    theme === "dark" ? "bg-gray-600" : "bg-gray-200"
+                    theme === "dark" ? "bg-[#2D3A4A]" : "bg-gray-200"
                   }`}
                 ></div>
 
@@ -238,7 +249,7 @@ export default function Projects() {
                       key={tech}
                       className={`px-3 py-1 rounded-full text-xs font-semibold transition-all hover:scale-105 ${
                         theme === "dark"
-                          ? "bg-blue-900 text-cyan-300 hover:bg-blue-800"
+                          ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
                           : "bg-blue-100 text-blue-700 hover:bg-blue-200"
                       }`}
                     >
