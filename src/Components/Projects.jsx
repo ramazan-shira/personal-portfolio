@@ -1,7 +1,13 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { t } from "../utils/translations";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import arkiva from "../Assets/Images/arkiva.png";
 import fortis from "../Assets/Images/fortis.png";
 import taskEase from "../Assets/Images/taskease.png";
@@ -19,93 +25,96 @@ import tasteIt from "../Assets/Images/tasteIt.png";
 
 export default function Projects() {
   const [visibleItems, setVisibleItems] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(null);
+
   const sectionRef = useRef(null);
   const itemRefs = useRef([]);
   const { theme, language } = useTheme();
 
   const projects = [
     {
-      image: arkiva,
+      images: [arkiva],
       liveUrl: "https://arkiva.gov.al",
       githubUrl:
         "https://github.com/ramazan-shira/arkiva.gov.al-frontend-local",
       technologies: ["React", "Node.js", "MongoDB", "REST API"],
     },
     {
-      image: fortis,
+      images: [fortis],
       liveUrl: "http://217.76.51.97/fortis/login",
       githubUrl: "https://github.com/fortistrainer/fortis-trainer-frontend",
       technologies: ["React", "Java", "MySQL"],
     },
     {
-      image: taskEase,
+      images: [taskEase],
       liveUrl: "https://taskease-front.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Task-Ease-Frontend",
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      image: notes,
+      images: [notes],
       liveUrl: "https://rsh-notesapp-react.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Notes-App-React",
       technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
     },
     {
-      image: carSales,
+      images: [carSales],
       liveUrl: "https://rsh-car-sales-redux.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Car---Sales---React-Redux",
       technologies: ["React Redux"],
     },
     {
-      image: petExpo,
+      images: [petExpo],
       liveUrl: "https://rsh-pet-expo.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/PET-EXPO",
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      image: userManagement,
+      images: [userManagement],
       liveUrl: "https://usermanagement-redux.netlify.app/",
       githubUrl:
         "https://github.com/ramazan-shira/User-Manegement---React-Redux",
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      image: toDoList,
+      images: [toDoList],
       liveUrl: "https://rsh-to-do-list-redux.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/To-Do-List-React",
       technologies: ["React Redux"],
     },
     {
-      image: githubProfile,
+      images: [githubProfile],
       liveUrl: "https://rsh-github-usercard.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Github-User-Card",
       technologies: ["React Redux"],
     },
     {
-      image: reactRouterMovies,
+      images: [reactRouterMovies],
       liveUrl: "https://rsh-react-router-movies.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/React-Router-Movies",
       technologies: ["React"],
     },
     {
-      image: digitalmastery,
+      images: [digitalmastery],
       liveUrl: "https://digitalmastery.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/DigitalMastery",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      image: tasteIt,
+      images: [tasteIt],
       liveUrl: "https://tasteit-restaurant.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Restaurant-Website",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      image: rollDice,
+      images: [rollDice],
       liveUrl: "https://rsh-roll-dice.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Pig-Game",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      image: guessNr,
+      images: [guessNr],
       liveUrl: "https://rsh-guess-number.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Guess-My-Number-Game",
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -132,136 +141,208 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
+  const openModal = (index) => {
+    setActiveProjectIndex(index);
+    setModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setActiveProjectIndex(null);
+    document.body.style.overflow = "auto";
+  };
+
   return (
-    <section
-      id="projects"
-      className={`py-20 transition-colors duration-300 ${
-        theme === "dark" ? "bg-[#1F2937]" : "bg-gray-50"
-      }`}
-      ref={sectionRef}
-    >
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2
-            className={`text-4xl md:text-5xl font-bold mb-4 ${
-              theme === "dark" ? "text-white" : "text-gray-800"
-            }`}
-          >
-            {t("projects.title", language)}
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p
-            className={`text-lg max-w-2xl mx-auto ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            {t("projects.subtitle", language)}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              ref={(el) => (itemRefs.current[index] = el)}
-              className={`group relative rounded-2xl overflow-hidden transition-all duration-700 ${
-                visibleItems.includes(index)
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              } ${
-                theme === "dark"
-                  ? "bg-[#1F2937] hover:bg-[#273345] hover:shadow-2xl hover:shadow-[#1F2937]/40"
-                  : "bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-500/15"
-              } hover:-translate-y-3 cursor-pointer`}
+    <>
+      <section
+        id="projects"
+        className={`py-20 transition-colors duration-300 ${
+          theme === "dark" ? "bg-[#1F2937]" : "bg-gray-50"
+        }`}
+        ref={sectionRef}
+      >
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2
+              className={`text-4xl md:text-5xl font-bold mb-4 ${
+                theme === "dark" ? "text-white" : "text-gray-800"
+              }`}
             >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={t(`projects.items.${index}.title`, language)}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+              {t("projects.title", language)}
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p
+              className={`text-lg max-w-2xl mx-auto ${
+                theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              {t("projects.subtitle", language)}
+            </p>
+          </div>
 
-                <div
-                  className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${
-                    theme === "dark"
-                      ? "bg-[#1F2937] opacity-30"
-                      : "bg-[#CBD5E1] opacity-40"
-                  }`}
-                ></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                ref={(el) => (itemRefs.current[index] = el)}
+                onClick={() => openModal(index)}
+                className={`group relative rounded-2xl overflow-hidden transition-all duration-700 cursor-pointer ${
+                  visibleItems.includes(index)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                } ${
+                  theme === "dark"
+                    ? "bg-[#1F2937] hover:bg-[#273345] hover:shadow-2xl hover:shadow-[#1F2937]/40"
+                    : "bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-500/15"
+                } hover:-translate-y-3`}
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.images[0]}
+                    alt={t(`projects.items.${index}.title`, language)}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${
+                      theme === "dark"
+                        ? "bg-[#1F2937] opacity-30"
+                        : "bg-[#CBD5E1] opacity-40"
+                    }`}
+                  ></div>
+                </div>
 
-                <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={t("projects.liveDemo", language)}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg ${
-                        theme === "dark" ? "bg-[#273345]" : "bg-white"
-                      }`}
-                    >
-                      <ExternalLink className="text-blue-600" size={20} />
-                    </a>
-                  )}
-
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={t("projects.viewCode", language)}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg ${
-                        theme === "dark" ? "bg-[#273345]" : "bg-white"
-                      }`}
-                    >
-                      <Github className="text-blue-600" size={20} />
-                    </a>
-                  )}
+                <div className="p-6">
+                  <h3
+                    className={`text-xl font-bold mb-2 ${
+                      theme === "dark" ? "text-white" : "text-gray-800"
+                    }`}
+                  >
+                    {t(`projects.items.${index}.title`, language)}
+                  </h3>
+                  <p
+                    className={`mb-4 leading-relaxed line-clamp-2 ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    {t(`projects.items.${index}.description`, language)}
+                  </p>
+                  <div
+                    className={`h-px mb-4 ${
+                      theme === "dark" ? "bg-[#2D3A4A]" : "bg-gray-200"
+                    }`}
+                  ></div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all hover:scale-105 ${
+                          theme === "dark"
+                            ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
+                            : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="p-6">
-                <h3
-                  className={`text-xl font-bold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-gray-800"
-                  }`}
-                >
-                  {t(`projects.items.${index}.title`, language)}
-                </h3>
+      {/* Modal */}
+      {modalOpen && activeProjectIndex !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 md:p-0">
+          <div className="bg-white dark:bg-[#1F2937] w-full max-w-6xl h-full md:h-[80vh] rounded-2xl flex flex-col md:flex-row overflow-hidden relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-800 dark:text-gray-200 z-50"
+            >
+              <X size={28} />
+            </button>
 
-                <p
-                  className={`mb-4 leading-relaxed line-clamp-2 ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
-                  {t(`projects.items.${index}.description`, language)}
-                </p>
+            {/* Carousel */}
+            <div className="w-full md:w-2/3 h-64 md:h-full relative">
+              <Swiper
+                modules={[Navigation, Pagination]}
+                navigation={{ hideOnClick: true }}
+                pagination={{ clickable: true }}
+                className="h-full"
+              >
+                {projects[activeProjectIndex].images.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <img
+                      src={img}
+                      alt={`Screenshot ${i + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
-                <div
-                  className={`h-px mb-4 ${
-                    theme === "dark" ? "bg-[#2D3A4A]" : "bg-gray-200"
-                  }`}
-                ></div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className={`px-3 py-1 rounded-full text-xs font-semibold transition-all hover:scale-105 ${
-                        theme === "dark"
-                          ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
-                          : "bg-blue-100 text-blue-700 hover:bg-blue-200"
-                      }`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            {/* Info */}
+            <div className="w-full md:w-1/3 p-6 overflow-y-auto">
+              <h2
+                className={`text-2xl font-bold mb-4 ${
+                  theme === "dark" ? "text-white" : "text-gray-800"
+                }`}
+              >
+                {t(`projects.items.${activeProjectIndex}.title`, language)}
+              </h2>
+              <p
+                className={`mb-6 ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
+                {t(
+                  `projects.items.${activeProjectIndex}.description`,
+                  language
+                )}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {projects[activeProjectIndex].technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      theme === "dark"
+                        ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
+                        : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                    }`}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4 flex-wrap">
+                {projects[activeProjectIndex].liveUrl && (
+                  <a
+                    href={projects[activeProjectIndex].liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                {projects[activeProjectIndex].githubUrl && (
+                  <a
+                    href={projects[activeProjectIndex].githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-700 dark:bg-gray-800 text-white rounded hover:bg-gray-800 dark:hover:bg-gray-700 transition flex items-center gap-1"
+                  >
+                    <Github size={16} /> Code
+                  </a>
+                )}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 }
