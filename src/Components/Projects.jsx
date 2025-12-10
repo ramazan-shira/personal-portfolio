@@ -8,20 +8,44 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import arkiva from "../Assets/Images/arkiva.png";
-import fortis from "../Assets/Images/fortis.png";
+import arkiva1 from "../Assets/Images/arkiva1.png";
+import arkiva2 from "../Assets/Images/arkiva2.png";
+import arkiva3 from "../Assets/Images/arkiva3.png";
+import arkiva4 from "../Assets/Images/arkiva4.png";
+import arkiva5 from "../Assets/Images/arkiva5.png";
+import fortis1 from "../Assets/Images/fortis1.png";
+import fortis2 from "../Assets/Images/fortis2.png";
+import fortis3 from "../Assets/Images/fortis3.png";
+import fortis4 from "../Assets/Images/fortis4.png";
+import fortis5 from "../Assets/Images/fortis5.png";
 import taskEase from "../Assets/Images/taskease.png";
-import notes from "../Assets/Images/notes-react.png";
-import carSales from "../Assets/Images/carSales.png";
-import petExpo from "../Assets/Images/pet-expo.png";
-import userManagement from "../Assets/Images/user-management.png";
-import toDoList from "../Assets/Images/toDoList-redux.png";
-import githubProfile from "../Assets/Images/github-user.png";
-import digitalmastery from "../Assets/Images/digitalmastery.png";
-import reactRouterMovies from "../Assets/Images/reactRouterMovies.png";
-import rollDice from "../Assets/Images/rollDice.png";
-import guessNr from "../Assets/Images/guessNr.png";
-import tasteIt from "../Assets/Images/tasteIt.png";
+import notes1 from "../Assets/Images/notes1.png";
+import notes2 from "../Assets/Images/notes2.png";
+import notes3 from "../Assets/Images/notes3.png";
+import notes4 from "../Assets/Images/notes4.png";
+import carSales1 from "../Assets/Images/carSales1.png";
+import carSales2 from "../Assets/Images/carSales2.png";
+import carSales3 from "../Assets/Images/carSales3.png";
+import petExpo1 from "../Assets/Images/petExpo1.png";
+import petExpo2 from "../Assets/Images/petExpo2.png";
+import userManagement1 from "../Assets/Images/userManagement1.png";
+import userManagement2 from "../Assets/Images/userManagement2.png";
+import toDo1 from "../Assets/Images/toDo1.png";
+import toDo2 from "../Assets/Images/toDo2.png";
+import githubProfile1 from "../Assets/Images/githubProfile1.png";
+import githubProfile2 from "../Assets/Images/githubProfile2.png";
+import githubProfile3 from "../Assets/Images/githubProfile3.png";
+import digitalMastery1 from "../Assets/Images/digitalMastery1.png";
+import digitalMastery2 from "../Assets/Images/digitalMastery2.png";
+import digitalMastery3 from "../Assets/Images/digitalMastery3.png";
+import rollDice1 from "../Assets/Images/rollDice1.png";
+import rollDice2 from "../Assets/Images/rollDice2.png";
+import guessNr1 from "../Assets/Images/guessNr1.png";
+import guessNr2 from "../Assets/Images/guessNr2.png";
+import guessNr3 from "../Assets/Images/guessNr3.png";
+import tasteIt1 from "../Assets/Images/tasteIt1.png";
+import tasteIt2 from "../Assets/Images/tasteIt2.png";
+import tasteIt3 from "../Assets/Images/tasteIt3.png";
 
 export default function Projects() {
   const [visibleItems, setVisibleItems] = useState([]);
@@ -34,14 +58,14 @@ export default function Projects() {
 
   const projects = [
     {
-      images: [arkiva],
+      images: [arkiva1, arkiva2, arkiva3, arkiva4, arkiva5],
       liveUrl: "https://arkiva.gov.al",
       githubUrl:
         "https://github.com/ramazan-shira/arkiva.gov.al-frontend-local",
       technologies: ["React", "Node.js", "MongoDB", "REST API"],
     },
     {
-      images: [fortis],
+      images: [fortis1, fortis2, fortis3, fortis4, fortis5],
       liveUrl: "http://217.76.51.97/fortis/login",
       githubUrl: "https://github.com/fortistrainer/fortis-trainer-frontend",
       technologies: ["React", "Java", "MySQL"],
@@ -53,68 +77,62 @@ export default function Projects() {
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      images: [notes],
+      images: [notes1, notes2, notes3, notes4],
       liveUrl: "https://rsh-notesapp-react.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Notes-App-React",
       technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
     },
     {
-      images: [carSales],
+      images: [carSales1, carSales2, carSales3],
       liveUrl: "https://rsh-car-sales-redux.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Car---Sales---React-Redux",
       technologies: ["React Redux"],
     },
     {
-      images: [petExpo],
+      images: [petExpo1, petExpo2],
       liveUrl: "https://rsh-pet-expo.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/PET-EXPO",
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      images: [userManagement],
+      images: [userManagement1, userManagement2],
       liveUrl: "https://usermanagement-redux.netlify.app/",
       githubUrl:
         "https://github.com/ramazan-shira/User-Manegement---React-Redux",
       technologies: ["React", "Node.js", "MongoDB"],
     },
     {
-      images: [toDoList],
+      images: [toDo1, toDo2],
       liveUrl: "https://rsh-to-do-list-redux.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/To-Do-List-React",
       technologies: ["React Redux"],
     },
     {
-      images: [githubProfile],
+      images: [githubProfile1, githubProfile2, githubProfile3],
       liveUrl: "https://rsh-github-usercard.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Github-User-Card",
       technologies: ["React Redux"],
     },
     {
-      images: [reactRouterMovies],
-      liveUrl: "https://rsh-react-router-movies.netlify.app/",
-      githubUrl: "https://github.com/ramazan-shira/React-Router-Movies",
-      technologies: ["React"],
-    },
-    {
-      images: [digitalmastery],
+      images: [digitalMastery1, digitalMastery2, digitalMastery3],
       liveUrl: "https://digitalmastery.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/DigitalMastery",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      images: [tasteIt],
+      images: [tasteIt1, tasteIt2, tasteIt3],
       liveUrl: "https://tasteit-restaurant.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Restaurant-Website",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      images: [rollDice],
+      images: [rollDice1, rollDice2],
       liveUrl: "https://rsh-roll-dice.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Pig-Game",
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      images: [guessNr],
+      images: [guessNr1, guessNr2, guessNr3],
       liveUrl: "https://rsh-guess-number.netlify.app/",
       githubUrl: "https://github.com/ramazan-shira/Guess-My-Number-Game",
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -287,7 +305,7 @@ export default function Projects() {
             {/* Info */}
             <div className="w-full md:w-1/3 p-6 overflow-y-auto">
               <h2
-                className={`text-2xl font-bold mb-4 ${
+                className={`text-4xl font-bold mb-4 ${
                   theme === "dark" ? "text-white" : "text-gray-800"
                 }`}
               >
@@ -307,7 +325,7 @@ export default function Projects() {
                 {projects[activeProjectIndex].technologies.map((tech) => (
                   <span
                     key={tech}
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    className={`px-3 py-1 rounded-full text-s font-semibold ${
                       theme === "dark"
                         ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
                         : "bg-blue-100 text-blue-700 hover:bg-blue-200"

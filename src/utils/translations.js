@@ -170,10 +170,6 @@ export const translations = {
           description: "Github user card application.",
         },
         {
-          title: "React Router Movies",
-          description: "Movie catalog app using React Router.",
-        },
-        {
           title: "Digital Mastery",
           description: "Landing page built with HTML, CSS, JavaScript.",
         },
@@ -408,10 +404,7 @@ export const translations = {
           title: "Github Profile",
           description: "Aplikacion kartelë përdoruesi Github.",
         },
-        {
-          title: "React Router Movies",
-          description: "Aplikacion katalog filmash me React Router.",
-        },
+
         {
           title: "Digital Mastery",
           description: "Landing page me HTML, CSS, JavaScript.",
