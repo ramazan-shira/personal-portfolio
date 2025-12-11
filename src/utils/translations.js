@@ -130,6 +130,7 @@ export const translations = {
         },
       ],
     },
+
     projects: {
       title: "Projects",
       subtitle: "Showcase of my recent work and personal projects",
@@ -137,53 +138,93 @@ export const translations = {
       liveDemo: "Live Demo",
       items: [
         {
-          title: "Arkiva",
-          description: "Digital archive platform for Albanian records.",
+          title: "arkiva.gov.al",
+          description:
+            "General Directorate of Archives official website and management platform.",
+          longDescription:
+            "The official website and internal management platform of the General Directorate of Archives. The platform enables administrators to add posts, videos, exhibitions, publications, and more. All changes made in the management system are automatically synchronized and displayed on the public website in real time.",
         },
         {
-          title: "Fortis",
-          description: "Employee training platform for Fortis.",
+          title: "teater.arkiva.gov.al",
+          description:
+            "Seat reservation website for the Summer Cinema of the General Directorate of Archives and its management backend.",
+          longDescription:
+            "A complete booking system for the Summer Cinema of the General Directorate of Archives. The public website allows users to view available films and reserve seats, while the management platform enables staff to add movies, manage bookings, generate reports, and view statistics.",
         },
-        { title: "TaskEase", description: "Task management app for teams." },
         {
-          title: "Notes App",
-          description: "Real-time note taking application.",
+          title: "Fortis Development",
+          description: "Recruitment management system.",
+          longDescription:
+            "A recruitment management system where job seekers can register, complete their profiles with qualifications, and apply for open positions. System operators manage job postings, candidate applications, and overall recruitment workflow through a dedicated admin interface.",
+        },
+        {
+          title: "TaskEase",
+          description: "Task management application.",
+          longDescription:
+            "A task management application that allows users to create and track tasks across three states: To Do, In Progress, and Finished. Each task supports details such as title, description, date, time, and comments. Built to practice full stack and UI development concepts.",
+        },
+        {
+          title: "Notes Web App",
+          description: "Web-based notes application.",
+          longDescription:
+            "A notes application enabling users to create, edit, and delete notes. Built as a learning project with a focus on CRUD operations, state management, and user-friendly interaction.",
         },
         {
           title: "Car Sales",
-          description: "Car sales platform using React Redux.",
+          description: "Car model showcase website.",
+          longDescription:
+            "A website displaying multiple car models. Users can customize a selected car with additional features, and the total price updates dynamically. Built as a practice project focusing on UI updates and state handling.",
         },
         {
           title: "Pet Expo",
-          description: "Event management platform for pet expo.",
+          description: "Website for a pet exhibition.",
+          longDescription:
+            "A website created for a pet exhibition event. Users can select between dogs, cats, or birds, and view a list of breeds related to the chosen category.",
         },
         {
           title: "User Management",
-          description: "User management system with React.",
+          description: "User management platform.",
+          longDescription:
+            "A user management system where administrators can add, update, and delete users by filling out user profile data. Built as a learning project focused on CRUD operations and interface organization.",
         },
         {
-          title: "ToDo List",
-          description: "Task organizer built with React Redux.",
+          title: "To Do List",
+          description: "To-do list web application.",
+          longDescription:
+            "A to-do list application where users can add tasks, mark them as completed, edit, and delete them. Developed as a learning project to practice front-end development fundamentals.",
         },
+
         {
           title: "Github Profile",
-          description: "Github user card application.",
+          description:
+            "Website for viewing GitHub user profiles using a username search.",
+          longDescription:
+            "A GitHub profile viewer where users can search for any GitHub account by username. The platform displays key statistics, repositories, followers, and following lists, offering a structured view of GitHub profile data.",
         },
+
         {
           title: "Digital Mastery",
-          description: "Landing page built with HTML, CSS, JavaScript.",
+          description: "Course learning center website.",
+          longDescription:
+            "A course training center website where users can browse available courses and learn more about the programs the center offers.",
         },
         {
           title: "Taste It",
-          description: "Restaurant website built with HTML, CSS, JavaScript.",
+          description: "Restaurant website.",
+          longDescription:
+            "A restaurant website where users can explore menu items, view information about the restaurant, and access contact details.",
         },
         {
-          title: "Roll Dice",
-          description: "Dice game built with HTML, CSS, JavaScript.",
+          title: "Roll Dice Game",
+          description: "Interactive two-player dice game.",
+          longDescription:
+            "A dice game where the first player to reach 100 points wins. If a player rolls a 1, the turn switches to the opponent. Created as a practice project for event handling and game logic.",
         },
         {
-          title: "Guess Number",
-          description: "Number guessing game with HTML, CSS, JavaScript.",
+          title: "Guess Number Game",
+          description: "Number-guessing game (1–20).",
+          longDescription:
+            "A number-guessing game where the user tries to guess a randomly selected number between 1 and 20. The system provides hints such as 'too high' or 'too low' until the correct answer is found.",
         },
       ],
       technologies: {
@@ -201,6 +242,7 @@ export const translations = {
         JavaScript: "JavaScript",
       },
     },
+
     contact: {
       title: "Get In Touch",
       subtitle:
@@ -230,6 +272,11 @@ export const translations = {
       copyright: "All rights reserved.",
     },
   },
+
+  // --------------------------------------------------------------------
+  // --------------------------- ALBANIAN VERSION -----------------------
+  // --------------------------------------------------------------------
+
   al: {
     nav: {
       home: "Kryefaqja",
@@ -247,9 +294,9 @@ export const translations = {
     about: {
       title: "Rreth Meje",
       description1:
-        "Jam një Inxhinier Softuerësh me pasion për të krijuar zgjidhje të qëndrueshme, të shkallëzueshme dhe të fokusuar tek përdoruesi.",
+        "Jam një Inxhinier Softuerësh me pasion për të krijuar zgjidhje të qëndrueshme, të shkallëzuara dhe të fokusuar te përdoruesi. Me një bazë të fortë në zhvillimin full stack dhe arkitekturën softuerike, sjell një qasje profesionale për zgjidhjen e problemeve komplekse dhe ndërtimin e aplikacioneve cilësore.",
       description2:
-        "Përfitoj më së miri në mjedise bashkëpunuese, duke punuar nëpër ekipe dhe duke zhvilluar aftësitë teknike dhe strategjike.",
+        "Punoj më së miri në mjedise bashkëpunuese, duke kontribuar në ekipe dhe duke vazhduar të zhvilloj aftësitë teknike dhe strategjike. I angazhuar për të shkruar kod të pastër dhe të mirëmbajtshëm, synoj të sjell ndikim dhe inovacion përmes teknologjisë.",
       highlights: [
         "Zhvillim Full Stack",
         "Arkitekturë Softueri",
@@ -263,7 +310,7 @@ export const translations = {
       downloadCV: "Shkarko CV",
     },
     skills: {
-      title: "Aftësi dhe Ekspertizë",
+      title: "Aftësi & Ekspertizë",
       frontend: "Frontend",
       backend: "Backend",
       database: "Baza e të Dhënave",
@@ -275,12 +322,12 @@ export const translations = {
         css: "CSS",
         javascript: "JavaScript",
         react: "React",
-        responsiveDesign: "Dizajn responsiv",
+        responsiveDesign: "Dizajn Responsiv",
         nodejs: "Node.js",
         php: "PHP",
         java: "Java",
         restApis: "REST API",
-        serverManagement: "Menaxhimi i Serverave",
+        serverManagement: "Administrimi i Serverave",
         mysql: "MySQL",
         mongodb: "MongoDB",
         databaseDesign: "Dizajn i Bazës së të Dhënave",
@@ -289,9 +336,9 @@ export const translations = {
         agile: "Agile",
         dataStructures: "Struktura të të Dhënave",
         algorithms: "Algoritme",
-        networking: "Administrimi i Rrjetit",
+        networking: "Rrjetëzim",
         versionControl: "Version Control",
-        codeReview: "Rishikim Kodit",
+        codeReview: "Rishikim Kodi",
         testing: "Testim",
         cicd: "CI/CD",
         problemSolving: "Zgjidhje Problemesh",
@@ -305,22 +352,22 @@ export const translations = {
       subtitle: "Shërbime zhvillimi të personalizuara për nevojat tuaja",
       fullStack: "Zhvillim Full Stack",
       fullStackDesc:
-        "Zhvillim aplikacionesh nga dizajni i bazës së të dhënave deri te ndërfaqet interaktive, me performancë optimale.",
+        "Zhvillim i plotë i aplikacioneve — nga baza e të dhënave deri te ndërfaqet interaktive — me integrim të lehtë dhe performancë optimale.",
       frontend: "Zhvillim Frontend",
       frontendDesc:
-        "Krijimi i ndërfaqeve të përdoruesit me React. Fokus në performancë, aksesueshmëri dhe kompatibilitet ndër-shfletues.",
+        "Krijimi i ndërfaqeve moderne dhe responsive me React. Fokus në performancë, aksesueshmëri dhe kompatibilitet ndër-shfletues.",
       backend: "Zhvillim Backend",
       backendDesc:
-        "Zhvillimi i aplikacioneve server-side me Node.js, PHP, dhe Java. Implementim API të sigurta dhe procese efikase të të dhënave.",
-      database: "Menaxhim i Bazës së të Dhënave",
+        "Ndërtimi i aplikacioneve të fuqishme server-side me Node.js, PHP dhe Java. Implementim i API-ve të sigurta dhe proceseve efikase të të dhënave.",
+      database: "Menaxhim Bazash të Dhënash",
       databaseDesc:
-        "Dizajnimi dhe optimizimi i skemave të bazës së të dhënave për MySQL dhe MongoDB.",
+        "Dizajnim dhe optimizim i skemave të MySQL dhe MongoDB me fokus në integritet dhe performancë.",
       responsive: "Dizajn Responsiv",
       responsiveDesc:
-        "Krijimi i eksperiencave të përdoruesit për të gjitha pajisjet dhe madhësitë e ekranit.",
+        "Krijimi i eksperiencave pa ndërprerje në të gjitha pajisjet dhe madhësitë e ekranit.",
       architecture: "Arkitekturë Sistemi",
       architectureDesc:
-        "Planifikim dhe implementim arkitekturash të shkallëzuara softuerike.",
+        "Planifikim dhe implementim arkitekturash të shkallëzuara dhe të sigurta softuerike.",
     },
     experience: {
       title: "Eksperienca",
@@ -332,9 +379,9 @@ export const translations = {
             "Përgjegjës i Sektorit të Digjitalizimit & Zhvillues Full Stack",
           period: "2024 - Tani",
           responsibilities: [
-            "Planifikimi, koordinimi dhe mbikëqyrja e të gjitha iniciativave të digjitalizimit",
+            "Planifikimi dhe koordinimi i iniciativave të digjitalizimit",
             "Menaxhimi i operacioneve të ekipit dhe performancës",
-            "Dizajnimi dhe implementimi i aplikacioneve full-stack",
+            "Dizajnimi dhe zhvillimi i aplikacioneve full-stack",
             "Ndërtimi dhe optimizimi i ndërfaqeve web dhe sistemeve të integruara",
           ],
         },
@@ -343,9 +390,9 @@ export const translations = {
           position: "Zhvillues Frontend",
           period: "2023 - 2024",
           responsibilities: [
-            "Bashkëpunim me dizajnerët për zhvillimin e funksionaliteteve",
-            "Sigurimi i kompatibilitetit ndër-shfletues dhe optimizimi i performancës",
-            "Implementimi i dizajneve responsiv për përdoruesit",
+            "Zhvillimi i funksionaliteteve të ndërfaqes së përdoruesit",
+            "Optimizim performance dhe kompatibiliteti ndër-shfletues",
+            "Implementimi i dizajneve responsiv",
             "Shkrimi i kodit të pastër dhe rishikimi i tij",
           ],
         },
@@ -354,9 +401,9 @@ export const translations = {
           position: "Specialist IT",
           period: "2021 - 2023",
           responsibilities: [
-            "Rishikimi i diagnostikimeve dhe vlerësimi i funksionalitetit të softuerit",
-            "Sigurimi i mbështetjes IT për përdoruesit dhe serverat",
-            "Konfigurimi i llogarive dhe menaxhimi i fjalëkalimeve",
+            "Diagnostikim dhe vlerësim i funksionalitetit të softuerit",
+            "Mbështetje IT për përdoruesit dhe serverat",
+            "Konfigurim llogarish dhe menaxhim fjalëkalimesh",
             "Zgjidhja e problemeve teknike hardware dhe software",
           ],
         },
@@ -369,57 +416,94 @@ export const translations = {
       liveDemo: "Demo Live",
       items: [
         {
-          title: "Arkiva",
-          description: "Platformë digjitale për arkivat shqiptare.",
+          title: "arkiva.gov.al",
+          description:
+            "Faqja zyrtare e Drejtorisë së Përgjithshme të Arkivave dhe platforma e saj e menaxhimit.",
+          longDescription:
+            "Faqja zyrtare e institucionit dhe platforma e brendshme e menaxhimit. Platforma përdoret për të shtuar postime, video, ekspozita, botime dhe përmbajtje të tjera, të cilat përditësohen automatikisht në faqen publike menjëherë pas çdo ndryshimi.",
         },
         {
-          title: "Fortis",
-          description: "Platformë trajnimi për punonjësit e Fortis.",
+          title: "teater.arkiva.gov.al",
+          description:
+            "Website për rezervimin e vendeve në Kinemanë Verore dhe platforma e saj e menaxhimit.",
+          longDescription:
+            "Sistem i plotë rezervimi për Kinemanë Verore të Drejtorisë së Përgjithshme të Arkivave. Faqja u mundëson përdoruesve të rezervojnë vende dhe të shohin filmat, ndërsa platforma e menaxhimit u mundëson operatorëve të shtojnë filma, të menaxhojnë rezervimet, të shohin statistika dhe raporte.",
+        },
+        {
+          title: "Fortis Development",
+          description: "Sistem menaxhimi për rekrutime.",
+          longDescription:
+            "Sistem rekrutimi ku personat në kërkim të punës mund të regjistrohen, të plotësojnë profilin me kualifikime dhe të aplikojnë për pozicione të hapura. Operatorët menaxhojnë pozicionet e punës, aplikimet dhe proceset e rekrutimit.",
         },
         {
           title: "TaskEase",
-          description: "Aplikacion për menaxhimin e detyrave në ekipe.",
+          description: "Aplikacion për menaxhimin e detyrave.",
+          longDescription:
+            "Aplikacion për menaxhimin e detyrave ku përdoruesi mund të shtojë detyra në gjendjet: Për të bërë, Në progres dhe Përfunduar. Çdo detyrë mund të ketë titull, përshkrim, datë, orë dhe komente. Projekt zhvilluar për praktikë dhe përmirësim të aftësive.",
         },
+
         {
-          title: "Notes App",
-          description: "Aplikacion për shënime në kohë reale.",
+          title: "Notes Web App",
+          description: "Aplikacion web për shënime.",
+          longDescription:
+            "Aplikacion për krijimin, modifikimin dhe fshirjen e shënimeve. Ndërtuar si projekt praktikues për të përmirësuar aftësitë në krijimin e aplikacioneve CRUD.",
         },
         {
           title: "Car Sales",
-          description: "Platformë shitjesh makinash me React Redux.",
+          description: "Website me modele makinash.",
+          longDescription:
+            "Website ku përdoruesi mund të shfletojë modele makinash, të zgjedhë një model dhe t'i shtojë opsione shtesë duke parë çmimin total. Projekt i zhvilluar për praktikë.",
         },
         {
           title: "Pet Expo",
-          description: "Menaxhimi i eventeve për ekspozitën e kafshëve.",
+          description: "Website për një ekspozitë kafshësh.",
+          longDescription:
+            "Website i një ekspozite kafshësh ku duke zgjedhur një kategori (qen, mace, zogj) shfaqet një listë racash përkatëse.",
         },
         {
           title: "User Management",
-          description: "Sistem menaxhimi përdoruesish me React.",
+          description: "Sistem menaxhimi përdoruesish.",
+          longDescription:
+            "Sistem ku mund të shtohen, editohen dhe fshihen përdorues duke plotësuar të dhënat e tyre. Projekt zhvilluar për mësim dhe praktikë.",
         },
         {
-          title: "ToDo List",
-          description: "Organizues detyrash me React Redux.",
+          title: "To Do List",
+          description: "Aplikacion to-do për detyrat e përditshme.",
+          longDescription:
+            "Aplikacion ku përdoruesi mund të shtojë, editojë, fshijë dhe shënojë si të përfunduara detyrat e tij. Projekt i zhvilluar për qëllime praktike.",
         },
+
         {
           title: "Github Profile",
-          description: "Aplikacion kartelë përdoruesi Github.",
+          description:
+            "Website për shikimin e profileve GitHub duke kërkuar me username.",
+          longDescription:
+            "Aplikacion që mundëson kërkimin e një përdoruesi në GitHub duke futur username. Shfaq statistika, listën e repos, ndjekësit dhe ata që ai ndjek.",
         },
 
         {
           title: "Digital Mastery",
-          description: "Landing page me HTML, CSS, JavaScript.",
+          description: "Website i një qendre trajnuese.",
+          longDescription:
+            "Website i një qendre kursesh ku përdoruesit mund të shfletojnë kurset dhe programet e ofruara.",
         },
         {
           title: "Taste It",
-          description: "Faqe restoranti me HTML, CSS, JavaScript.",
+          description: "Faqe restoranti.",
+          longDescription:
+            "Website restoranti ku përdoruesit mund të shohin menunë, informacionin e lokalit dhe kontaktet.",
         },
         {
-          title: "Roll Dice",
-          description: "Loja me zar me HTML, CSS, JavaScript.",
+          title: "Roll Dice Game",
+          description: "Lojë me zare — lojtari i parë me 100 pikë fiton.",
+          longDescription:
+            "Lojë me zare ku lojtari që mbledh 100 pikë i pari shpallet fitues. Nëse del numri 1, radha kalon te lojtari tjetër. Ndërtuar për qëllime praktike.",
         },
         {
-          title: "Guess Number",
-          description: "Loja e gjykimit të numrit me HTML, CSS, JavaScript.",
+          title: "Guess Number Game",
+          description: "Lojë për gjetjen e një numri nga 1–20.",
+          longDescription:
+            "Lojë ku përdoruesi tenton të gjejë një numër sekret nga 1 deri në 20. Sistemi jep udhëzime nëse numri është më i lartë ose më i ulët derisa të gjendet saktë.",
         },
       ],
       technologies: {
@@ -437,29 +521,30 @@ export const translations = {
         JavaScript: "JavaScript",
       },
     },
+
     contact: {
       title: "Kontakt",
       subtitle:
-        "Ke një projekt në mendje? Le të punojmë së bashku për të krijuar diçka të mahnitshme",
+        "Ke një projekt në mendje? Le të punojmë së bashku për të krijuar diçka të jashtëzakonshme.",
       contactInfo: "Informacion Kontakti",
       email: "Email",
       phone: "Telefon",
       location: "Vendndodhja",
       connect: "Keni ide për projekt?",
       connectMsg:
-        "Jam gjithmonë i hapur për të diskutuar projekte të reja, ide kreative ose mundësi për të qenë pjesë e vizionit tuaj.",
+        "Jam gjithmonë i hapur për të diskutuar projekte të reja, ide kreative apo mundësi të reja bashkëpunimi.",
       name: "Emri",
       subject: "Subjekti",
       message: "Mesazhi",
       namePlaceholder: "Emri juaj",
       emailPlaceholder: "emaili.juaj@example.com",
-      subjectPlaceholder: "Pyetje për projektin",
-      messagePlaceholder: "Tregoni për projektin tuaj...",
+      subjectPlaceholder: "Kërkesë për projekt",
+      messagePlaceholder: "Tregoni më shumë për projektin tuaj...",
       sendMessage: "Dërgo Mesazhin",
     },
     footer: {
       about:
-        "Zhvillues Full Stack me pasion për të krijuar zgjidhje të shkallëzuara dhe për të zgjidhur probleme komplekse.",
+        "Zhvillues Full Stack me pasion për krijimin e zgjidhjeve të shkallëzuara dhe zgjidhjen e problemeve komplekse.",
       quickLinks: "Lidhje të Shpejta",
       connect: "Kontakto",
       madeBy: "Krijuar nga",

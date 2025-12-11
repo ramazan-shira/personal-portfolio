@@ -13,6 +13,10 @@ import arkiva2 from "../Assets/Images/arkiva2.png";
 import arkiva3 from "../Assets/Images/arkiva3.png";
 import arkiva4 from "../Assets/Images/arkiva4.png";
 import arkiva5 from "../Assets/Images/arkiva5.png";
+import teater1 from "../Assets/Images/teater1.png";
+import teater2 from "../Assets/Images/teater2.png";
+import teater3 from "../Assets/Images/teater3.png";
+import teater4 from "../Assets/Images/teater4.png";
 import fortis1 from "../Assets/Images/fortis1.png";
 import fortis2 from "../Assets/Images/fortis2.png";
 import fortis3 from "../Assets/Images/fortis3.png";
@@ -60,8 +64,13 @@ export default function Projects() {
     {
       images: [arkiva1, arkiva2, arkiva3, arkiva4, arkiva5],
       liveUrl: "https://arkiva.gov.al",
-      githubUrl:
-        "https://github.com/ramazan-shira/arkiva.gov.al-frontend-local",
+      githubUrl: "https://github.com/rukubaruku/arkiva.gov.al-frontend",
+      technologies: ["React", "Node.js", "MongoDB", "REST API"],
+    },
+    {
+      images: [teater1, teater2, teater3, teater3, teater4],
+      liveUrl: "https://teater.arkiva.gov.al",
+      githubUrl: "https://github.com/rukubaruku/frontend-teater.arkiva.gov.al",
       technologies: ["React", "Node.js", "MongoDB", "REST API"],
     },
     {
@@ -199,6 +208,7 @@ export default function Projects() {
             </p>
           </div>
 
+          {/* PROJECT GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
@@ -230,31 +240,37 @@ export default function Projects() {
                   ></div>
                 </div>
 
-                <div className="p-6">
+                {/* CARD TEXT */}
+                <div className="p-6 cursor-pointer">
                   <h3
-                    className={`text-xl font-bold mb-2 ${
+                    className={`text-2xl font-bold mb-3 cursor-pointer ${
                       theme === "dark" ? "text-white" : "text-gray-800"
                     }`}
                   >
                     {t(`projects.items.${index}.title`, language)}
                   </h3>
+
                   <p
-                    className={`mb-4 leading-relaxed line-clamp-2 ${
+                    className={`mb-4 text-lg leading-relaxed line-clamp-2 cursor-pointer ${
                       theme === "dark" ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
                     {t(`projects.items.${index}.description`, language)}
                   </p>
+
+                  {/* Divider */}
                   <div
                     className={`h-px mb-4 ${
                       theme === "dark" ? "bg-[#2D3A4A]" : "bg-gray-200"
                     }`}
                   ></div>
+
+                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all hover:scale-105 ${
+                        className={`px-3 py-1 rounded-full text-sm font-semibold transition-all hover:scale-105 cursor-pointer ${
                           theme === "dark"
                             ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
                             : "bg-blue-100 text-blue-700 hover:bg-blue-200"
@@ -271,7 +287,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* MODAL */}
       {modalOpen && activeProjectIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 md:p-0">
           <div className="bg-white dark:bg-[#1F2937] w-full max-w-6xl h-full md:h-[80vh] rounded-2xl flex flex-col md:flex-row overflow-hidden relative">
@@ -302,30 +318,33 @@ export default function Projects() {
               </Swiper>
             </div>
 
-            {/* Info */}
+            {/* MODAL INFO */}
             <div className="w-full md:w-1/3 p-6 overflow-y-auto">
               <h2
-                className={`text-4xl font-bold mb-4 ${
+                className={`text-4xl font-bold mb-4 cursor-pointer ${
                   theme === "dark" ? "text-white" : "text-gray-800"
                 }`}
               >
                 {t(`projects.items.${activeProjectIndex}.title`, language)}
               </h2>
+
               <p
-                className={`mb-6 ${
+                className={`mb-6 text-lg cursor-pointer ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
                 }`}
               >
                 {t(
-                  `projects.items.${activeProjectIndex}.description`,
+                  `projects.items.${activeProjectIndex}.longDescription`,
                   language
                 )}
               </p>
+
+              {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {projects[activeProjectIndex].technologies.map((tech) => (
                   <span
                     key={tech}
-                    className={`px-3 py-1 rounded-full text-s font-semibold ${
+                    className={`px-3 py-1 rounded-full text-sm font-semibold cursor-pointer ${
                       theme === "dark"
                         ? "bg-[#273345] text-cyan-300 hover:bg-[#324059]"
                         : "bg-blue-100 text-blue-700 hover:bg-blue-200"
@@ -335,6 +354,8 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
+              {/* Buttons */}
               <div className="flex gap-4 flex-wrap">
                 {projects[activeProjectIndex].liveUrl && (
                   <a
@@ -346,6 +367,7 @@ export default function Projects() {
                     Live Demo
                   </a>
                 )}
+
                 {projects[activeProjectIndex].githubUrl && (
                   <a
                     href={projects[activeProjectIndex].githubUrl}
